@@ -12,12 +12,9 @@ class NoteSearchHeader extends React.Component {
   }
 
   onSearchChange(event) {
-    this.onSearchHandler(event.target.value)
-    this.setState(() => {
-      return {
-        search: event.target.value
-      }
-    });
+    const searchQuery = event.target.value;
+    this.setState({ search: searchQuery });
+    this.props.onSearch(searchQuery);
   }
 
   render() {

@@ -21,7 +21,7 @@ class NoteInputForm extends React.Component {
     if (input.length <= this.maxLength) {
       this.setState(() => {
         return {
-          title: event.target.value
+          title: input
         }
       });
     }

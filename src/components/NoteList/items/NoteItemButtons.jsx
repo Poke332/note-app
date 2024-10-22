@@ -1,6 +1,6 @@
 import React from "react";
-import ArchiveButton from "./buttons/ArchiveButton";
-import DeleteButton from "./buttons/DeleteButton";
+import ArchiveButton from "../buttons/ArchiveButton";
+import DeleteButton from "../buttons/DeleteButton";
 
 function NoteItemButtons({id, archived, onArchived, onDelete}) {
   return (

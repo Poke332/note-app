@@ -7,7 +7,8 @@ class NoteApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: []
+      notes: [],
+      searchQuery: ''
     }
 
     this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
@@ -50,13 +51,25 @@ class NoteApp extends React.Component {
     this.setState({ notes });
   }
 
+  onSearchHandler(query) {
+    this.setState({searchQuery: query})
+  }
+
+  getFilteredNotes() {
+    const {notes, searchQuery} = this.state;
+    return notes.filter((note) => {
+      note.title.toLowerCase().includes(searchQuery.toLowerCase())
+    })
+  }
+
   render() {
+    const filteredNotes = this.getFilteredNotes();
     return (
       <>
-        <NoteSearchHeader />
+        <NoteSearchHeader onSearch={this.onSearchHandler}/>
         <div className='note-app'>
           <NoteInput addNote={this.onAddNoteHandler} />
-          <NoteList notes={this.state.notes} onDelete={this.onDeleteHandler} onArchived={this.onArchiveHandler}/>
+          <NoteList notes={filteredNotes} onDelete={this.onDeleteHandler} onArchived={this.onArchiveHandler}/>
         </div>
       </>
     )

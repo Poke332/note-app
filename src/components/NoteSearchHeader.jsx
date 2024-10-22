@@ -6,7 +6,14 @@ class NoteSearchHeader extends React.Component {
 
     this.state = {
       searched: ''
-    }
+    };
+
+    this.onSearchChange = this.onSearchChange.bind(this);
+  }
+
+  onSearchChange(event) {
+    this.setState({ searched: event.target.value });
+    this.props.onSearch(event.target.value);
   }
 
   render() {
@@ -14,7 +21,7 @@ class NoteSearchHeader extends React.Component {
       <header>
         <h1>Notes</h1>
         <form className="note-search-form">
-          <input type="text" placeholder="Cari Catatan..." value={this.state.searched} />
+          <input type="text" placeholder="Cari Catatan..." value={this.state.searched} onChange={this.onSearchChange}/>
         </form>
       </header>
     )

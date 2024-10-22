@@ -21,7 +21,7 @@ class NoteSearchHeader extends React.Component {
     return (
       <header>
         <h1>Notes</h1>
-        <form className="note-search-form">
+        <form className="note-search-form" onSubmit={(e) => e.preventDefault()}>
           <input type="text" placeholder="Cari Catatan..." value={this.state.search} onChange={this.onSearchChange}/>
         </form>
       </header>

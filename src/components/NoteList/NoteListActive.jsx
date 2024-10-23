@@ -1,7 +1,7 @@
 import React from "react";
 import NoteItem from "./items/NoteItem";
 
-function NoteListActive({ notes, onDelete, onArchived }) {
+function NoteListActive({ notes, onDelete, onArchived, formatDate }) {
   const activeNotes = notes.filter((note) => note.archived === false)
   return (
     <div className="note-list__active">
@@ -15,6 +15,7 @@ function NoteListActive({ notes, onDelete, onArchived }) {
               id={note.id}
               onDelete={onDelete}
               onArchived={onArchived}
+              formatDate={formatDate}
               {...note} />)
           )) : (
             <p className="no-notes">Tidak Ada Catatan</p>

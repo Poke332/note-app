@@ -2,11 +2,11 @@ import React from "react";
 import NoteListActive from "./NoteListActive";
 import NoteListArchived from "./NoteListArchived";
 
-function NoteList({ notes, onDelete, onArchived }) {
+function NoteList({ notes, onDelete, onArchived, formatDate }) {
   return (
     <div className="note-list">
-      <NoteListActive notes={notes} onDelete={onDelete} onArchived={onArchived} />
-      <NoteListArchived notes={notes} onDelete={onDelete} onArchived={onArchived} />
+      <NoteListActive notes={notes} onDelete={onDelete} onArchived={onArchived} formatDate={formatDate} />
+      <NoteListArchived notes={notes} onDelete={onDelete} onArchived={onArchived} formatDate={formatDate}/>
     </div>
   )
 }

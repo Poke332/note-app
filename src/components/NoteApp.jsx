@@ -2,12 +2,13 @@ import React from 'react';
 import NoteInput from './NoteInput';
 import NoteList from './NoteList/NoteList';
 import NoteSearchHeader from './NoteSearchHeader';
+import { getInitialData, showFormattedDate } from '../utils/index';
 
 class NoteApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [],
+      notes: getInitialData(),
       searchQuery: ''
     }
 
@@ -68,7 +69,7 @@ class NoteApp extends React.Component {
         <NoteSearchHeader onSearch={this.onSearchHandler} />
         <div className='note-app'>
           <NoteInput addNote={this.onAddNoteHandler} />
-          <NoteList notes={filtered} onDelete={this.onDeleteHandler} onArchived={this.onArchiveHandler}/>
+          <NoteList notes={filtered} onDelete={this.onDeleteHandler} onArchived={this.onArchiveHandler} formatDate={showFormattedDate}/>
         </div>
       </>
     )

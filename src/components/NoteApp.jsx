@@ -67,10 +67,10 @@ class NoteApp extends React.Component {
     return (
       <>
         <NoteSearchHeader onSearch={this.onSearchHandler} />
-        <div className='note-app'>
+        <article className='note-app'>
           <NoteInput addNote={this.onAddNoteHandler} />
           <NoteList notes={filtered} onDelete={this.onDeleteHandler} onArchived={this.onArchiveHandler} formatDate={showFormattedDate}/>
-        </div>
+        </article>
       </>
     )
   }

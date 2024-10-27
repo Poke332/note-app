@@ -1,7 +1,8 @@
 import React from "react";
+import Card from 'react-bootstrap/Card';
 
 function NoteItemBody({body}) {
-  return <p className="note-item__body">{body}</p>
+  return <Card.Text>{body}</Card.Text>
 }
 
 export default NoteItemBody;

@@ -4,9 +4,9 @@ import NoteItem from "./items/NoteItem";
 function NoteListActive({ notes, onDelete, onArchived, formatDate }) {
   const activeNotes = notes.filter((note) => note.archived === false)
   return (
-    <div className="note-list__active">
+    <div className="container-fluid">
       <h2>Catatan Aktif</h2>
-      <div className="note-list__cards">
+      <div className="note-list container-fluid d-flex flex-wrap justify-content-center gap-3">
         {
           activeNotes.length > 0 ? (        
             activeNotes.map((note) => (

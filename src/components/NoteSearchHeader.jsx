@@ -1,4 +1,5 @@
 import React from "react";
+import { Form } from "react-bootstrap";
 
 class NoteSearchHeader extends React.Component {
   constructor(props) {
@@ -21,9 +22,9 @@ class NoteSearchHeader extends React.Component {
     return (
       <header>
         <h1>Notes</h1>
-        <form className="note-search-form" onSubmit={(e) => e.preventDefault()}>
-          <input type="text" placeholder="Cari Catatan..." value={this.state.search} onChange={this.onSearchChange}/>
-        </form>
+        <Form className="note-search-form" onSubmit={(e) => e.preventDefault()}>
+          <Form.Control className="input" type="text" placeholder="Cari Catatan..." value={this.state.search} onChange={this.onSearchChange}/>
+        </Form>
       </header>
     )
   }

@@ -4,9 +4,9 @@ import NoteItem from "./items/NoteItem";
 function NoteListArchived({ notes, onDelete, onArchived, formatDate }) {
   const archivedNotes = notes.filter((note) => note.archived === true)
   return (
-    <div className="note-list__archive">
+    <div className="container-fluid">
       <h2>Arsip</h2>
-      <div className="note-list__cards">
+      <div className="note-list container-fluid d-flex flex-wrap justify-content-center">
         {
           archivedNotes.length > 0 ? (        
             archivedNotes.map((note) => (

@@ -1,4 +1,7 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 class NoteInputForm extends React.Component {
   constructor(props) {
@@ -42,14 +45,25 @@ class NoteInputForm extends React.Component {
 
   render() {
     return (
-      <form className='note-input__form' onSubmit={this.onSubmitEventHandler}>
-        <div className='note-input-title-container'>
-          <p>Sisa Karakter: {this.maxLength - this.state.title.length}</p>
-          <input className='title-input' type="text" placeholder="Judul" value={this.state.title} onChange={this.onTitleChangeEventHandler} required/>
-        </div>
-        <textarea className="body-input" type="text" placeholder="Tambahkan Catatan" value={this.state.body} onChange={this.onNoteChangeEventHandler} required/>
-        <button className='submit-button' type="submit">Tambahkan Catatan</button>
-      </form>
+      <Form className='d-grid' onSubmit={this.onSubmitEventHandler}>
+        <Form.Group className='note-input-title-container' controlId="noteinput.ControlInput1">
+          <FloatingLabel className='text-white' controlId="floatingInput1" label="Judul">
+            <Form.Control className='input' type="text" placeholder="" value={this.state.title} onChange={this.onTitleChangeEventHandler} required/>
+          </FloatingLabel>
+          <p className='text-end text-white'>Sisa Karakter: {this.maxLength - this.state.title.length}</p>
+        </Form.Group>
+        <Form.Group className='note-input-title-container mb-2' controlId='noteinput.ControlInput2'>
+          <FloatingLabel className='text-white' controlId='floatingInput2' label="Deskripsi Catatan">
+            <Form.Control 
+              as="textarea" className="input text-white" type="text" placeholder="" 
+              value={this.state.body} 
+              onChange={this.onNoteChangeEventHandler} 
+              style={{height: '20vh'}}
+              required/>
+          </FloatingLabel>
+        </Form.Group>
+        <Button variant="outline-light" type="submit" size="s">Tambahkan Catatan</Button>
+      </Form>
     )
   }
 }

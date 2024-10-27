@@ -1,11 +1,12 @@
 import React from "react";
+import Card from 'react-bootstrap/Card';
 
 function NoteItemHeader({title, createdAt, formatDate}) {
   return (
-    <div className="note-item__header">
-      <h3>{title}</h3>
-      <p className="created-date">{formatDate(createdAt)}</p>
-    </div>
+    <blockquote className="blockquote">
+      <Card.Title as="h4">{title}</Card.Title>
+      <Card.Subtitle className="blockquote-footer mb-3 text-muted">{formatDate(createdAt)}</Card.Subtitle>
+    </blockquote>
   )
 }
 

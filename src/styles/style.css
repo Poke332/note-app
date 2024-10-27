@@ -84,7 +84,7 @@ header {
   }
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 1366px) {
   .note-list {
     flex-direction: column;
   }

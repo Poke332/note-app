@@ -4,6 +4,6 @@ import NoteApp from './components/NoteApp';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.css';
-
+/*test*/
 const root = createRoot(document.getElementById('root'));
 root.render(<NoteApp />);

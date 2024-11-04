@@ -68,6 +68,10 @@ header {
   gap: 16px;
 }
 
+.note-list {
+  width: 100%;
+}
+
 .note-list__active, .note-list__archive {
   padding: var(--child-padding);
 }

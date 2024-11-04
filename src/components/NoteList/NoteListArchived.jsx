@@ -6,7 +6,7 @@ function NoteListArchived({ notes, onDelete, onArchived, formatDate }) {
   return (
     <div className="container-fluid">
       <h2>Arsip</h2>
-      <div className="note-list container-fluid d-flex flex-wrap justify-content-center">
+      <div className="note-list container-fluid d-flex justify-content-center flex-wrap gap-3">
         {
           archivedNotes.length > 0 ? (        
             archivedNotes.map((note) => (
@@ -18,7 +18,7 @@ function NoteListArchived({ notes, onDelete, onArchived, formatDate }) {
               formatDate={formatDate}
               {...note} />)
           )) : (
-            <p className="no-notes">Tidak Ada Catatan</p>
+            <p>Tidak Ada Catatan</p>
           )
         }
       </div>

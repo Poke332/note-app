@@ -4,7 +4,7 @@ import NoteListArchived from "./NoteListArchived";
 
 function NoteList({ notes, onDelete, onArchived, formatDate }) {
   return (
-    <section className="d-flex flex-column gap-3">
+    <section className="note-list d-flex flex-column gap-3">
       <NoteListActive notes={notes} onDelete={onDelete} onArchived={onArchived} formatDate={formatDate} />
       <NoteListArchived notes={notes} onDelete={onDelete} onArchived={onArchived} formatDate={formatDate}/>
     </section>

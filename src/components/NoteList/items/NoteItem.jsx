@@ -6,7 +6,7 @@ import NoteItemButtons from './NoteItemButtons';
 
 function NoteItem({id, title, body, createdAt, archived, onDelete, onArchived, formatDate}) {
   return (
-    <Card className='note-item container-fluid'>
+    <Card className='note-item'>
       <Card.Body className='d-flex flex-column justify-content-between gap-3'>
         <div>
           <NoteItemHeader title={title} createdAt={createdAt} formatDate={formatDate}/>

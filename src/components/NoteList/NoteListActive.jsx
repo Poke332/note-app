@@ -6,7 +6,7 @@ function NoteListActive({ notes, onDelete, onArchived, formatDate }) {
   return (
     <div className="container-fluid">
       <h2>Catatan Aktif</h2>
-      <div className="note-list container-fluid d-flex flex-wrap justify-content-center gap-3">
+      <div className="note-list container-fluid d-flex justify-content-center flex-wrap gap-3">
         {
           activeNotes.length > 0 ? (        
             activeNotes.map((note) => (
@@ -18,7 +18,7 @@ function NoteListActive({ notes, onDelete, onArchived, formatDate }) {
               formatDate={formatDate}
               {...note} />)
           )) : (
-            <p className="no-notes">Tidak Ada Catatan</p>
+            <p>Tidak Ada Catatan</p>
           )
         }
       </div>
